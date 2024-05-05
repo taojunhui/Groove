@@ -11,21 +11,24 @@ from .title_bar_buttons import MaximizeButton, TitleBarButton
 
 
 class TitleBar(QWidget):
-    """ Title bar """
+    """ Title bar 标题栏"""
 
     def __new__(cls, *args, **kwargs):
+        #根据平台获取具体的标题栏类
         cls = WindowsTitleBar if sys.platform == "win32" else LinuxTitleBar
         return super().__new__(cls, *args, **kwargs)
 
     def __init__(self, parent):
         super().__init__(parent)
-        self.resize(600, 40)
-        self.setAttribute(Qt.WA_TranslucentBackground)
+        self.resize(600, 40) #设置大小
+        self.setAttribute(Qt.WA_TranslucentBackground) #设置属性为半透明
         self.titleLabel = QLabel(self.tr("Groove Music"), self)
+        #创建最小化、关闭、最大化按钮
         self.minButton = TitleBarButton(parent=self)
         self.closeButton = TitleBarButton(parent=self)
         self.returnButton = TitleBarButton((60, 40), self)
         self.maxButton = MaximizeButton(self)
+        #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
         self.__initWidget()
 
     def __initWidget(self):
