@@ -57,14 +57,14 @@ from View.video_interface import VideoInterface
 
 
 class MainWindow(AcrylicWindow):
-    """ Main window """
+    """ Main window 主窗口"""
 
     def __init__(self, parent=None):
         super().__init__(parent=parent)
         self.isInSelectionMode = False
-        self.versionManager = VersionManager()
+        self.versionManager = VersionManager() #版本管理器
         self.navigationHistories = [("myMusicInterfaceStackWidget", 0)]
-        self.setObjectName("mainWindow")
+        self.setObjectName("mainWindow") #给窗体设置名称
         self.createWidgets()
         self.initWidget()
         self.initHotkey()
