@@ -48,5 +48,5 @@ app.installTranslator(translator)
 groove = MainWindow()
 groove.show()
 
-#程序进行循环等待
+#开始事件循环
 app.exec_()
