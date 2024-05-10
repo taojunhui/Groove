@@ -1624,7 +1624,7 @@ class MainWindow(AcrylicWindow):
 
 
 class SplashScreen(QWidget):
-    """ Splash screen """
+    """ Splash screen 启动画面 """
 
     def __init__(self, parent=None):
         super().__init__(parent=parent)
